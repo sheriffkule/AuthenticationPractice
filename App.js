@@ -17,8 +17,10 @@ function AuthStack() {
     <Stack.Navigator
       screenOptions={{
         headerStyle: {backgroundColor: Colors.primary500},
-        headerTintColor: 'white',
+        headerTintColor: '#00ff84',
+        headerTitleAlign: 'center',
         contentStyle: {backgroundColor: Colors.primary100},
+        animation: 'slide_from_bottom',
       }}>
       <Stack.Screen name="Login" component={LoginScreen} />
       <Stack.Screen name="Signup" component={SignupScreen} />
@@ -67,7 +69,7 @@ function Navigation() {
 export default function App() {
   return (
     <>
-      <StatusBar style="light" />
+      <StatusBar barStyle={'light-content'} />
 
       <AuthContextProvider>
         <Navigation />
