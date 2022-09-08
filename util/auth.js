@@ -12,12 +12,16 @@ async function authenticate(mode, email, password) {
   });
 }
 
-console.log(response.data);
+const token = response.data.idToken;
 
-export async function createUser(email, password) {
-  await authenticate('signUp', email, password);
+return token;
+
+// eslint-disable-next-line no-unreachable
+export function createUser(email, password) {
+  return authenticate('signUp', email, password);
 }
 
-export async function login(email, password) {
-  await authenticate('signInWithPassword', email, password);
+// eslint-disable-next-line no-unreachable
+export function login(email, password) {
+  return authenticate('signInWithPassword', email, password);
 }
