@@ -10,18 +10,16 @@ async function authenticate(mode, email, password) {
     password: password,
     returnSecureToken: true,
   });
+
+  const token = response.data.idToken;
+
+  return token;
 }
 
-const token = response.data.idToken;
-
-return token;
-
-// eslint-disable-next-line no-unreachable
 export function createUser(email, password) {
   return authenticate('signUp', email, password);
 }
 
-// eslint-disable-next-line no-unreachable
 export function login(email, password) {
   return authenticate('signInWithPassword', email, password);
 }
